@@ -76,7 +76,7 @@ class MigrationsTest extends TestCase
 
         Artisan::call('migrate:fresh', ['--path' => '/database/migrations/task5']);
     }
-/*
+
     public function test_duplicate_name()
     {
         // We expect that the second Company::create() would throw an exception like
@@ -121,5 +121,5 @@ class MigrationsTest extends TestCase
         Visitor::create(['ip_address' => '127.0.0.1']);
         $this->assertDatabaseCount(Visitor::class, 1);
     }
-        */
+
 }
