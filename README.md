@@ -1,3 +1,4 @@
+## Laravel app for phpunit tests development, topic: Migrations
 ## tests/Feature/MigrationsTest.php
 
 run `php artisan test`, or `vendor/bin/phpunit`
