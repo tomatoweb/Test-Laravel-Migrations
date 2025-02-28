@@ -1,7 +1,7 @@
 ## Laravel app for phpunit tests development, topic: Migrations
 ## tests/Feature/MigrationsTest.php
 
-run `php artisan test`, or `vendor/bin/phpunit`
+run `php artisan test`, or `php artisan test --filter test_create_user`, or `vendor/bin/phpunit`
 
 
 ## IMPORTANT NOTICE - TESTING DATABASE IS MYSQL
