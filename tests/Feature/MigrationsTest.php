@@ -9,6 +9,7 @@ use App\Models\Project;
 use App\Models\User;
 use App\Models\Visitor;
 use Illuminate\Database\QueryException;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
@@ -23,10 +24,14 @@ class MigrationsTest extends TestCase
 
     public function test_successful_foreign_key_tasks_comments()
     {
-        // We just test if the migration succeeds or throws an exception
-        $this->expectNotToPerformAssertions();
-
-        Artisan::call('migrate:fresh', ['--path' => '/database/migrations/task1']);
+        $this->visit('/')
+            ->see('Login')
+            ->type('unknown@example.org', 'email')
+            ->type('invalid-password', 'password')
+            ->check('remember')
+            ->press('Login')
+            ->seePageIs('/login')
+            ->see('These credentials do not match our records');
     }
 
     public function test_column_added_to_the_table()
